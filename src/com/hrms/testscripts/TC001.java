@@ -12,7 +12,7 @@ public class TC001 {
 	
 	
 	@Test
-	public static void tc001() throws Exception {
+	public void tc001() throws Exception {
 		
 		BaseClass.openApplication();
 		VerifyPage.verify("Orange");
