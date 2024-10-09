@@ -1,17 +1,30 @@
 package com.hrms.utility;
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
+import org.testng.annotations.Parameters;
 
 public class BaseClass {
 // driver
 	public static WebDriver driver; 
 	
 	// Open Application
-		public static void openApplication() {
-		System.setProperty("webdriver.chrome.driver", "D:\\Driver\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.navigate().to("http://183.82.125.5/nareshit/index.php");
+	    @Parameters({"browser"}) // for Cross browser Testing
+		public static void openApplication(String br) throws Exception {
+		//System.setProperty("webdriver.chrome.driver", "D:\\Driver\\chromedriver_win32\\chromedriver.exe");
+		 switch(br) {
+		 case "chrome": driver= new ChromeDriver(); break;
+		 case "Firefox": driver = new FirefoxDriver(); break;
+		 case "Invalid" : System.out.println("Invalid Entry"); return;
+		 }
+		driver.navigate().to("https://opensource-demo.orangehrmlive.com/auth/login");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		Thread.sleep(5000);
+		System.out.println("Applicatin Opened");
 		Reporter.log("Application Opened");
 				
 	}
@@ -20,6 +33,7 @@ public class BaseClass {
 	// close Application
 		public static void CloseApplication() {
 			driver.close();
+			System.out.println("Application Closed");
 			Reporter.log("Application Closed");
 			
 			

@@ -1,3 +1,13 @@
+  
+
+
+
+
+
+
+
+
+
 package com.hrms.pages;
 
 import org.openqa.selenium.By;
@@ -13,7 +23,8 @@ public class LoginPage extends BaseClass  {
 	 static By btn_login = By.name("Submit");
 	 
 	//Functions
-	 public static void Login(String un , String pw) {
+	 public static void Login(String un , String pw) 
+	 {
 		 driver.findElement(txt_username).sendKeys(un);
 		 driver.findElement(txt_password).sendKeys(pw);
 		 driver.findElement(btn_login).click();
