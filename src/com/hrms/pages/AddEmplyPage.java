@@ -21,7 +21,7 @@ public class AddEmplyPage extends BaseClass{
 		driver.findElement(btn_Add).click();
 		driver.findElement(txt_FirstName).sendKeys(Fn);
 		driver.findElement(txt_LastName).sendKeys(Ln);
-		driver.findElement(btn_Choose).sendKeys("D:\\mayur pic.jpeg");
+		driver.findElement(btn_Choose).sendKeys("D:\\TestResults.PNG");
 		driver.findElement(btn_Save).click();;
 		driver.switchTo().defaultContent();
 		Reporter.log("New Employee Added");

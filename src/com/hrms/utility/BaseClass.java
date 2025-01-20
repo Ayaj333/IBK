@@ -1,4 +1,4 @@
-package com.hrms.utility;
+ package com.hrms.utility;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -20,7 +20,7 @@ public class BaseClass {
 		 case "Firefox": driver = new FirefoxDriver(); break;
 		 case "Invalid" : System.out.println("Invalid Entry"); return;
 		 }
-		driver.navigate().to("https://opensource-demo.orangehrmlive.com/auth/login");
+		driver.navigate().to("http://127.0.0.1/orangehrm-2.6/login.php");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		Thread.sleep(5000);

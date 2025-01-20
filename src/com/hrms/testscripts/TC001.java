@@ -14,9 +14,9 @@ public class TC001 {
 	@Test
 	public void tc001() throws Exception {
 		
-		BaseClass.openApplication();
+		BaseClass.openApplication("chrome");
 		VerifyPage.verify("Orange");
-		LoginPage.Login("nareshit", "nareshit");
+		LoginPage.Login("admin", "admin");
 		VerifyPage.verify("HRMS");
 		AddEmplyPage.AddEmply("Suresh", "Sir");
 		LogoutPage.logout();
